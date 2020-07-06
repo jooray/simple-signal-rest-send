@@ -30,6 +30,9 @@ app.listen(port, () => {
     stdout: signal_cli.stdout.toString('utf8'),
     stderr: signal_cli.stderr.toString('utf8')
   });
+ });
 
-})
+ app.get(bind_uri, (req, res) => {
+    return res.send("Hello signal"); // enables lame monitoring of running service
+ });
 });
